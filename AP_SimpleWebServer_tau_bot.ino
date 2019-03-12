@@ -277,7 +277,16 @@ void loop() {
             client.println();
 
             // the content of the HTTP response follows the header:
-            client.print("Click <a href=\"/H\">here</a> to start <br>");
+            client.print("Click <a href=\"/A\">here</a> to start wave 1<br>");
+            client.print("Click <a href=\"/B\">here</a> to start wave 2<br>");
+            client.print("Click <a href=\"/C\">here</a> to start wave 3<br>");
+            client.print("Click <a href=\"/D\">here</a> to start wave 4<br>");
+            client.print("Click <a href=\"/E\">here</a> to start wave 5<br>");
+            client.print("Click <a href=\"/F\">here</a> to start wave 6<br>");
+            client.print("Click <a href=\"/G\">here</a> to start wave 7<br>");
+            client.print("Click <a href=\"/H\">here</a> to start wave 8<br>");
+            client.print("Click <a href=\"/I\">here</a> to start wave 9<br>");
+            client.print("Click <a href=\"/J\">here</a> to start wave 10<br>");
 //            client.print("Click <a href=\"/L\">here</a> turn the LED off<br>");
 
             // The HTTP response ends with another blank line:
@@ -294,18 +303,8 @@ void loop() {
         }
 
         // Check to see if the client request was "GET /H" or "GET /L":
-        if (currentLine.endsWith("GET /H")) {
-          digitalWrite(led, HIGH);
-//       int   g = 0;
-//  for (int i = 230; i >= 0; i--) {
-//    analogWrite(analogOutPin2, i);
-//    analogWrite(analogOutPin4, i); 
-//    if (i < 160 || i > 0) {
-//      analogWrite(analogOutPin3, g);
-//      g++;
-//    }
-// delay(30);
-// } 
+        if (currentLine.endsWith("GET /A")) {
+
 
 
 for (int i = 100; i <= 140; i++) {
@@ -401,14 +400,167 @@ delay(5);
 g = 0;
 for (int i = 120; i >= 0; i--) {
 analogWrite(analogOutPin6, i);
-//  digitalWrite(led, HIGH);
-//  delay(500); 
-//  digitalWrite(LED_BUILTIN, LOW);
 delay(5);
 }
          
-        }
+}
+if (currentLine.endsWith("GET /B")) {
 
+          
+analogWrite(analogOutPin, 0);
+
+for (int i = 50; i <= 100; i++) {
+
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin2, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+
+for (int i = 100; i >=40; i--) {
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin2, i);
+digitalWrite(led, HIGH);
+delay(50);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+for (int i = 50; i <= 100; i++) {
+
+analogWrite(analogOutPin5, i);
+analogWrite(analogOutPin1, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+
+for (int i = 100; i >=40; i--) {
+analogWrite(analogOutPin5, i);
+analogWrite(analogOutPin1, i);
+digitalWrite(led, HIGH);
+delay(50);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+for (int i = 50; i <= 100; i++) {
+
+analogWrite(analogOutPin6, i);
+analogWrite(analogOutPin, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+
+for (int i = 100; i >=40; i--) {
+analogWrite(analogOutPin6, i);
+analogWrite(analogOutPin, i);
+digitalWrite(led, HIGH);
+delay(50);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+        }
+ if (currentLine.endsWith("GET /C")) {
+
+          
+analogWrite(analogOutPin, 0);
+
+for (int i = 50; i <= 100; i++) {
+
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin2, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+for (int i = 100; i >= 40; i--) {
+
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin2, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+}
+  
+  if (currentLine.endsWith("GET /D")) {
+
+ 
+
+  
+  }
+    if (currentLine.endsWith("GET /E")) {
+      analogWrite(analogOutPin, 0);
+
+for (int i = 50; i <= 100; i++) {
+
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin2, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+
+for (int i = 100; i >= 40; i--) {
+
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin2, i);
+
+digitalWrite(led, HIGH);
+delay(100);
+digitalWrite(led, LOW);
+Serial.println(i);
+delay(3);
+}
+  
+  }
+    if (currentLine.endsWith("GET /F")) {
+      //Тут можно вставить волну
+  
+  }
+    if (currentLine.endsWith("GET /G")) {
+  //Тут можно вставить волну
+  }
+    if (currentLine.endsWith("GET /H")) {
+  //Тут можно вставить волну
+  }
+    if (currentLine.endsWith("GET /I")) {
+  //Тут можно вставить волну
+  }
+    if (currentLine.endsWith("GET /J")) {
+  //Тут можно вставить волну//Тут можно вставить волну
+  }
+ 
+       
       }
     }
     // close the connection:
