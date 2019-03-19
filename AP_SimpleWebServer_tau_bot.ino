@@ -16,6 +16,7 @@
   adapted to WiFi AP by Adafruit
  */
 
+//ALARMA pin3 
 #include <SPI.h>
 #include <WiFi101.h>
 
@@ -24,10 +25,19 @@ int myData;
 int analogOutPin = 6;
 int analogOutPin1 = 7;
 int analogOutPin2 = 8;
-int analogOutPin3 = 9;
-int analogOutPin4 = 10;
-int analogOutPin5 = 11;
-int analogOutPin6 = 12;
+int analogOutPin3 = 1;
+int analogOutPin4 = 4;
+int analogOutPin5 = 5; //port 1 
+int analogOutPin6 = 0;
+
+int count_0 = 40;
+int count_1 = 40;
+int count_2 = 40;
+int count_3 = 80;
+int count_4 = 40;
+int count_5 = 40;
+int count_6 = 40;
+
 
 char buf[1024];
 
@@ -287,6 +297,20 @@ void loop() {
             client.print("Click <a href=\"/H\">here</a> to start wave 8<br>");
             client.print("Click <a href=\"/I\">here</a> to start wave 9<br>");
             client.print("Click <a href=\"/J\">here</a> to start wave 10<br>");
+            client.print("######################################################<br>");           
+            client.print("Click <a href=\"/S\">here</a> to stop<br>");  
+            client.print("######################################################<br>");
+            client.print("Pin0 + <a href=\"/pin0+\">here</a> Pin0 - <a href=\"/pin0-\">here</a> <br>"); 
+            client.print("Pin1 + <a href=\"/pin1+\">here</a> Pin0 - <a href=\"/pin1-\">here</a> <br>");             
+            client.print("Pin2 + <a href=\"/pin2+\">here</a> Pin0 - <a href=\"/pin2-\">here</a> <br>"); 
+            client.print("Pin3 + <a href=\"/pin3+\">here</a> Pin0 - <a href=\"/pin3-\">here</a> <br>"); 
+            client.print("Pin4 + <a href=\"/pin4+\">here</a> Pin0 - <a href=\"/pin4-\">here</a> <br>");             
+            client.print("Pin5 + <a href=\"/pin5+\">here</a> Pin0 - <a href=\"/pin5-\">here</a> <br>");              
+            client.print("Pin6 + <a href=\"/pin6+\">here</a> Pin0 - <a href=\"/pin6-\">here</a> <br>");             
+
+    
+             client.print("######################################################");         
+//            client.print("Click <a href=\"/W\">here</a> to <br>");
 //            client.print("Click <a href=\"/L\">here</a> turn the LED off<br>");
 
             // The HTTP response ends with another blank line:
@@ -307,22 +331,22 @@ void loop() {
 
 
 
-for (int i = 100; i <= 140; i++) {
+for (int i = 0; i <= 100; i++) {
 analogWrite(analogOutPin, i);
 delay(10);
 }
 
 int g = 0;
-for (int i = 140; i >= 0; i--) {
+for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin, i);
-if (i < 70 || i > 0) {
+if (i < 50 || i > 0) {
 analogWrite(analogOutPin1, g);
 g++;
 }
 delay(10);
 }
 
-for (int i = 70; i <= 100; i++) {
+for (int i = 50; i <= 100; i++) {
 analogWrite(analogOutPin1, i);
 delay(10);
 }
@@ -330,13 +354,13 @@ delay(10);
 g = 0;
 for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin1, i);
-if (i < 60 || i > 0) {
+if (i < 50 || i > 0) {
 analogWrite(analogOutPin2, g);
 g++;
 }
 delay(10);
 }
-for (int i = 60; i <= 100; i++) {
+for (int i = 50; i <= 100; i++) {
 analogWrite(analogOutPin2, i);
 delay(10);
 }
@@ -344,27 +368,27 @@ delay(10);
 g = 0;
 for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin2, i);
-if (i < 75 || i > 0) {
+if (i < 50 || i > 0) {
 analogWrite(analogOutPin3, g);
 g++;
 }
 delay(10);
 } 
-for (int i = 75; i <= 130; i++) {
+for (int i = 50; i <= 100; i++) {
 analogWrite(analogOutPin3, i);
 delay(10);
 }
 
 g = 0;
-for (int i = 130; i >= 0; i--) {
+for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin3, i);
-if (i < 60 || i > 0) {
+if (i < 50 || i > 0) {
 analogWrite(analogOutPin4, g);
 g++;
 }
 delay(10);
 }
-for (int i = 60; i <= 100; i++) {
+for (int i = 50; i <= 100; i++) {
 analogWrite(analogOutPin4, i);
 delay(10);
 }
@@ -372,13 +396,13 @@ delay(10);
 g = 0;
 for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin4, i);
-if (i < 60 || i > 0) {
+if (i < 50 || i > 0) {
 analogWrite(analogOutPin5, g);
 g++;
 }
 delay(5);
 }
-for (int i = 60; i <= 100; i++) {
+for (int i = 50; i <= 100; i++) {
 analogWrite(analogOutPin5, i);
 delay(5);
 }
@@ -386,19 +410,19 @@ delay(5);
 g = 0;
 for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin5, i);
-if (i < 80 || i > 0) {
+if (i < 50 || i > 0) {
 analogWrite(analogOutPin6, g);
 g++;
 }
 delay(5);
 } 
-for (int i = 80; i <= 120; i++) {
+for (int i = 0; i <= 100; i++) {
 analogWrite(analogOutPin6, i);
 delay(5);
 }
 
 g = 0;
-for (int i = 120; i >= 0; i--) {
+for (int i = 100; i >= 0; i--) {
 analogWrite(analogOutPin6, i);
 delay(5);
 }
@@ -481,32 +505,53 @@ delay(3);
         }
  if (currentLine.endsWith("GET /C")) {
 
-          
 analogWrite(analogOutPin, 0);
 
-for (int i = 50; i <= 100; i++) {
+for (int i = 50; i <= 150; i++) {
 
-analogWrite(analogOutPin4, i);
-analogWrite(analogOutPin2, i);
+analogWrite(analogOutPin6, i);
+analogWrite(analogOutPin, i);
+delay(50);
 
-digitalWrite(led, HIGH);
-delay(100);
-digitalWrite(led, LOW);
-Serial.println(i);
-delay(3);
+}
+int g = 40;
+for (int i = 150; i >= 40; i--) {
+if (i < 150 || i > 40) {
+  analogWrite(analogOutPin5, g);
+  analogWrite(analogOutPin1, g);
+  delay(50);
+  g++;
+}
+analogWrite(analogOutPin6, i);
+analogWrite(analogOutPin1, i);
+delay(50);
+}
+analogWrite(analogOutPin, 0);
+g = 40;
+for (int i = 150; i >= 40; i--) {
+if (i < 150 || i > 40) {
+  analogWrite(analogOutPin4, g);
+  analogWrite(analogOutPin2, g);
+  delay(50);
+  g++;
+}
+analogWrite(analogOutPin5, i);
+analogWrite(analogOutPin1, i);
+delay(50);
 }
 
-for (int i = 100; i >= 40; i--) {
-
+g = 115;
+for (int i = 150; i >= 40; i--) {
+if (i < 150 || i > 110) {
+  analogWrite(analogOutPin3, g);
+  delay(50);
+  g++;
+}
 analogWrite(analogOutPin4, i);
 analogWrite(analogOutPin2, i);
-
-digitalWrite(led, HIGH);
-delay(100);
-digitalWrite(led, LOW);
-Serial.println(i);
-delay(3);
+delay(50);
 }
+analogWrite(analogOutPin3, 0);
 }
   
   if (currentLine.endsWith("GET /D")) {
@@ -516,36 +561,75 @@ delay(3);
   
   }
     if (currentLine.endsWith("GET /E")) {
-      analogWrite(analogOutPin, 0);
-
-for (int i = 50; i <= 100; i++) {
-
-analogWrite(analogOutPin4, i);
-analogWrite(analogOutPin2, i);
-
-digitalWrite(led, HIGH);
+Serial.println("Hello");
+analogWrite(analogOutPin, 100);
+delay(3000);
+analogWrite(analogOutPin, 0);
 delay(100);
-digitalWrite(led, LOW);
-Serial.println(i);
-delay(3);
-}
-
-for (int i = 100; i >= 40; i--) {
-
-analogWrite(analogOutPin4, i);
-analogWrite(analogOutPin2, i);
-
-digitalWrite(led, HIGH);
+Serial.println("Pin0 ready");
+analogWrite(analogOutPin6, 100);
+delay(3000);
+analogWrite(analogOutPin6, 0);
 delay(100);
-digitalWrite(led, LOW);
-Serial.println(i);
-delay(3);
-}
+Serial.println("Pin6 ready");
+analogWrite(analogOutPin1, 100);
+delay(3000);
+analogWrite(analogOutPin1, 0);
+delay(100);
+Serial.println("Pin1 ready");
+analogWrite(analogOutPin5, 100);
+delay(3000);
+analogWrite(analogOutPin5, 0);
+delay(100);
+Serial.println("Pin5 ready");
+
+analogWrite(analogOutPin2, 100);
+delay(3000);
+analogWrite(analogOutPin2, 0);
+delay(100);
+Serial.println("Pin2 ready");
+analogWrite(analogOutPin4, 100);
+delay(3000);
+analogWrite(analogOutPin4, 0);
+delay(100);
+Serial.println("Pin4 ready");
+analogWrite(analogOutPin3, 100);
+delay(3000);
+analogWrite(analogOutPin3, 0);
+delay(100);
+Serial.println("Pin3 ready");
   
   }
     if (currentLine.endsWith("GET /F")) {
-      //Тут можно вставить волну
-  
+Serial.println("Pin0");
+analogWrite(analogOutPin, 100);
+delay(1000);
+Serial.println("Pin1");
+analogWrite(analogOutPin1, 100);
+delay(1000);
+Serial.println("Pin2");
+analogWrite(analogOutPin, 0);
+analogWrite(analogOutPin2, 130);
+delay(1000);
+Serial.println("Pin3");
+analogWrite(analogOutPin1, 0);
+analogWrite(analogOutPin3, 130);
+delay(1000);
+Serial.println("Pin4");
+analogWrite(analogOutPin2, 0);
+analogWrite(analogOutPin4, 100);
+delay(1000);
+Serial.println("Pin5");
+analogWrite(analogOutPin3, 0);
+analogWrite(analogOutPin5, 100);
+delay(1000);
+Serial.println("Pin6");
+analogWrite(analogOutPin4, 0);
+analogWrite(analogOutPin6, 100);
+delay(1000);
+analogWrite(analogOutPin5, 0);
+delay(1000);
+analogWrite(analogOutPin6, 0); 
   }
     if (currentLine.endsWith("GET /G")) {
   //Тут можно вставить волну
@@ -557,7 +641,144 @@ delay(3);
   //Тут можно вставить волну
   }
     if (currentLine.endsWith("GET /J")) {
-  //Тут можно вставить волну//Тут можно вставить волну
+  
+  }
+      if (currentLine.endsWith("GET /S")) {
+        int i = 0;
+        analogWrite(analogOutPin, i);
+analogWrite(analogOutPin1, i);
+analogWrite(analogOutPin2, i);
+analogWrite(analogOutPin3, i);
+analogWrite(analogOutPin4, i);
+analogWrite(analogOutPin5, i);
+analogWrite(analogOutPin6, i);
+count_0 = 40;
+count_1 = 40;
+count_2 = 40;
+count_3 = 70;
+count_4 = 40;
+count_5 = 40;
+count_6 = 40;
+  
+  }
+      if (currentLine.endsWith("GET /pin0+")) {
+        Serial.println("###################################################");
+        count_0 = count_0 + 5;
+        analogWrite(analogOutPin, count_0);
+        Serial.println( count_0);
+
+        
+  
+  }
+      if (currentLine.endsWith("GET /pin0-")) {
+        Serial.println("###################################################");
+        count_0 = count_0 - 5;
+        analogWrite(analogOutPin, count_0);
+        Serial.println( count_0);
+
+  
+  }
+        if (currentLine.endsWith("GET /pin1+")) {
+        Serial.println("###################################################");
+        count_1 = count_1 + 5;
+        analogWrite(analogOutPin1, count_1);
+        Serial.println( count_1);
+
+        
+  
+  }
+  if (currentLine.endsWith("GET /pin1-")) {
+        Serial.println("###################################################");
+        count_1 = count_1 - 5;
+        analogWrite(analogOutPin1, count_1);
+        Serial.println( count_1);
+
+
+  
+  }
+  
+  if (currentLine.endsWith("GET /pin2+")) {
+        Serial.println("###################################################");
+        count_2 = count_2 + 5;
+        analogWrite(analogOutPin2, count_2);
+        Serial.println(count_2);
+
+  }
+      if (currentLine.endsWith("GET /pin2-")) {
+        Serial.println("###################################################");
+        count_2 = count_2 - 5;
+        analogWrite(analogOutPin2, count_2);
+        Serial.println(count_2);
+
+
+  
+  }      if (currentLine.endsWith("GET /pin3+")) {
+        Serial.println("###################################################");
+        count_3 = count_3 + 5;
+        analogWrite(analogOutPin3, count_3);
+        Serial.println( count_3);
+
+        
+  
+  }
+      if (currentLine.endsWith("GET /pin3-")) {
+        Serial.println("###################################################");
+        count_3 = count_3 - 20;
+        analogWrite(analogOutPin3, count_3);
+        Serial.println( count_3);
+
+  
+  } 
+      if (currentLine.endsWith("GET /pin4+")) {
+        Serial.println("###################################################");
+        count_4 = count_4 + 5;
+        analogWrite(analogOutPin4, count_4);
+        Serial.println( count_4);
+
+        
+  
+  }
+      if (currentLine.endsWith("GET /pin4-")) {
+        Serial.println("###################################################");
+        Serial.println( count_4);
+        count_4 = count_5 - 4;
+        analogWrite(analogOutPin5, count_4);
+
+  
+  }    if (currentLine.endsWith("GET /pin5+")) {
+        Serial.println("###################################################");
+        Serial.println( count_5);
+        count_5 = count_5 + 5;
+        analogWrite(analogOutPin5, count_5);
+
+        
+  
+  }
+      if (currentLine.endsWith("GET /pin5-")) {
+        Serial.println("###################################################");
+        Serial.println( count_5);
+        count_5 = count_5 - 5;
+        analogWrite(analogOutPin5, count_5);
+
+  
+  }
+
+      if (currentLine.endsWith("GET /pin6+")) {
+        Serial.println("###################################################");
+        count_6 = count_6 + 5;
+        analogWrite(analogOutPin6, count_6);
+        Serial.println( count_6);
+
+        
+  
+  }
+      if (currentLine.endsWith("GET /pin6-")) {
+        Serial.println("###################################################");
+        count_6 = count_6 - 5;
+        analogWrite(analogOutPin6, count_6);
+        Serial.println( count_6);
+
+  
   }
  
        
