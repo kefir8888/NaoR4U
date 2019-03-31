@@ -1,0 +1,58 @@
+Этот файл посвящен тому, как правильно запускать и как правильно использовать проект R4U.
+This file is devoted to the correct running and usage of R4U project.
+
+Структура файла следующая:
+1) Необходимые для работы вещи
+2) Репозиторий и общая структура проекта
+3) Запуск и использование
+
+The file is structured as follows:
+1) Necessary software
+2) Repository and general project structure
+3) Running and usage
+
+Необходимые для работы программы:
+1) Choregraphe соответствующей версии робота версии
+2) Python 3.7
+3) Jupyter Notebook, можно поставить Anaconda и юпитер там будет
+
+Necessary software:
+1) Version of Choregraphe, correspondant to the Nao version
+2) Python 3.7
+3) Jupyter Notebook (could be installed by installing Anaconda)
+
+Репозиторий и общая структура проекта
+1) behaviour
+Проект для Choreographe, содержащий сервер и всевозможные движения робота.
+
+2) controller
+Ноутбук для Jupyter, запускающий все остальные модули и пишущий логи.
+
+3) cv
+Модуль обработки видео с вебкамер, отслеживающий и оценивающий движения ребенка.
+
+4) haptic
+Программы для Arduino, позволяющие удаленно контролировать вибромоторы и снимать показания с датчиков.
+
+5) website
+Сайт с простым интерфейсом, позволяющий удаленно контролировать робота.
+
+Repository and general project structure
+1) behaviour
+Choreographe prject with server and all the robot's moves.
+
+2) controller
+Jupyter Notebook file, running all the modules and providing logging.
+
+3) cv
+Video analysis module, controlling and evaluating the child's moves.
+
+4) haptic
+Arduino scripts for remote controll of the vibomotors and taking measurements from the sensors.
+
+5) website
+Website with simple interface for remote controll of the robot.
+
+Запуск и использование
+
+Running and usage
