@@ -1,5 +1,5 @@
 <?xml version="1.0" encoding="UTF-8" ?>
-<Package name="prefinal_project" format_version="4">
+<Package name="prefinal_project" format_version="5">
     <Manifest src="manifest.xml" />
     <BehaviorDescriptions>
         <BehaviorDescription name="behavior" src="behavior_1" xar="behavior.xar" />
@@ -56,10 +56,13 @@
     <Topics />
     <IgnoredPaths>
         <Path src="Desktop/team 44/prefinal_project/Forma_550.docx" />
-        <Path src="Desktop/team 44/prefinal_project/TASK1/behavior.xar" />
-        <Path src="Desktop/team 44/prefinal_project/TASK1" />
         <Path src="Desktop/team 44/prefinal_project/manifest.xml" />
+        <Path src="Desktop/team 44/prefinal_project/TASK1" />
         <Path src="Desktop/team 44/prefinal_project/behavior_1/behavior.xar" />
+        <Path src="Desktop/team 44/prefinal_project/TASK1/behavior.xar" />
         <Path src="Desktop/team 44/prefinal_project/behavior_1" />
     </IgnoredPaths>
+    <Translations auto-fill="en_US">
+        <Translation name="translation_en_US" src="translations/translation_en_US.ts" language="en_US" />
+    </Translations>
 </Package>
