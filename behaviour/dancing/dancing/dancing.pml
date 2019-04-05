@@ -10,6 +10,7 @@
         <File name="mikhael-landscape-paisaje" src="behavior_1/sounds/mikhael-landscape-paisaje.ogg" />
         <File name="Cheap Thrills (feat. Sean Paul) (Mp3Beet.Com) - 192Kbps" src="Cheap Thrills (feat. Sean Paul) (Mp3Beet.Com) - 192Kbps.mp3" />
         <File name="ofenbach-nick-waterhouse-katchi" src="ofenbach-nick-waterhouse-katchi.mp3" />
+        <File name="hello_speech" src="hello_speech.mp3" />
     </Resources>
     <Topics />
     <IgnoredPaths />
